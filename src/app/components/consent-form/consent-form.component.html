@@ -1,7 +1,5 @@
 <div style="margin: 10px">
-  <button routerLink="/qr" mat-mini-fab color="secondary">
-    <mat-icon>home</mat-icon>
-  </button>
+  <button routerLink="/qr" mat-raised-button color="secondary">Home</button>
 </div>
 <pdf-viewer
   src="../assets/UE_Consent_Form.pdf"
@@ -32,7 +30,9 @@
       </div>
     </div>
     <div class="button-container">
-      <button mat-raised-button color="secondary" (click)="clear()">Clear</button>
+      <button mat-raised-button color="secondary" (click)="clear()">
+        Clear
+      </button>
       <button mat-raised-button color="primary" (click)="save()">Save</button>
     </div>
   </div>
