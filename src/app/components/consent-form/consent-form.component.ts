@@ -116,7 +116,7 @@ export class ConsentFormComponent implements OnInit {
 
     const pdfBytes = await pdfDoc.save();
 
-    downloadjs(pdfBytes, 'pdf-lib_creation_example.pdf', 'application/pdf');
+    downloadjs(pdfBytes, `consent_form.pdf`, 'application/pdf');
     this._snackBar.open('Saved');
   }
 
