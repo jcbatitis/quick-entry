@@ -17,6 +17,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [AppComponent, QrCodeComponent, ConsentFormComponent],
@@ -35,6 +36,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatChipsModule,
     MatButtonModule,
     MatIconModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent],

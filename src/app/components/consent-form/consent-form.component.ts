@@ -10,6 +10,7 @@ import { PDFDocument, StandardFonts } from 'pdf-lib';
 import downloadjs from 'downloadjs';
 import SignaturePad from 'signature_pad';
 import { ActivatedRoute } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-consent-form',
@@ -31,7 +32,11 @@ export class ConsentFormComponent implements OnInit {
 
   public consultant: string;
 
-  constructor(private http: HttpClient, private route: ActivatedRoute) {
+  constructor(
+    private http: HttpClient,
+    private route: ActivatedRoute,
+    private _snackBar: MatSnackBar
+  ) {
     this.consultant = this.route.snapshot.paramMap.get('consultant');
   }
 
@@ -64,7 +69,7 @@ export class ConsentFormComponent implements OnInit {
   }
   public async save(): Promise<void> {
     if (this.signaturePad.isEmpty()) {
-      alert('Signature is required.');
+      this._snackBar.open('Signature is required');
       return;
     }
 
@@ -112,7 +117,7 @@ export class ConsentFormComponent implements OnInit {
     const pdfBytes = await pdfDoc.save();
 
     downloadjs(pdfBytes, 'pdf-lib_creation_example.pdf', 'application/pdf');
-    alert('Saved!');
+    this._snackBar.open('Saved');
   }
 
   public clear(): void {
