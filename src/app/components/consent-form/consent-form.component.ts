@@ -69,7 +69,7 @@ export class ConsentFormComponent implements OnInit {
   }
   public async save(): Promise<void> {
     if (this.signaturePad.isEmpty()) {
-      this._snackBar.open('Signature is required');
+      this._snackBar.open('Signature is required', 'Close', { duration: 3000 });
       return;
     }
 
